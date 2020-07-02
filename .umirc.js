@@ -13,7 +13,7 @@ export default defineConfig({
 	title: "my app",
 	hash: !isDev,
 	// publicPath: isDev ? "/" : "/dist/",
-	publicPath: "/dist/",
+	publicPath: "/",
 	routes: [
 		{
 			path: "/",
