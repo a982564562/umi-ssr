@@ -6,7 +6,7 @@
     "debug": "cross-env RM_TMPDIR=none COMPRESS=none UMI_ENV=prod umi build && node server.js"
   },
   "engines": {
-    "node": ">8.0.0"
+    "node": ">10.0.0"
   },
   "dependencies": {
     "antd": "^3.22.0",
@@ -20,10 +20,10 @@
     "react-document-title": "^2.0.3",
     "react-dom": "^16.8.6",
     "regenerator-runtime": "^0.13.2",
-    "umi-request": "^1.2.4",
-    "umi-server": "^1.2.3"
+    "umi-request": "^1.2.4"
   },
   "devDependencies": {
+    "@umijs/fabric": "^2.0.11",
     "@umijs/preset-react": "^1.5.12",
     "concurrently": "^4.1.2",
     "nodemon": "^1.19.1",
