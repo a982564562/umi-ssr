@@ -1,8 +1,8 @@
 {
   "scripts": {
     "build": "umi build",
-    "start": "npm run build && nodemon server.js",
-    "dev": "cross-env UMI_UI=none NODE_ENV=development concurrently \"umi dev\" \"nodemon server.js\"",
+    "start": "umi build && nodemon server.js",
+    "dev": "cross-env NODE_ENV=development concurrently \"umi dev\" \"nodemon --watch server.js\"",
     "debug": "cross-env RM_TMPDIR=none COMPRESS=none UMI_ENV=prod umi build && node server.js"
   },
   "engines": {

@@ -16,12 +16,14 @@ app.use(
 );
 
 app.use(async (ctx, next) => {
+	console.log("path: ", ctx.request.path);
 	const ext = extname(ctx.request.path);
 	// 符合要求的路由才进行服务端渲染，否则走静态文件逻辑
-	console.log("ext: ", ext);
+	// console.log("ext: ", ext);
 	if (!ext) {
 		ctx.type = "text/html";
 		ctx.status = 200;
+
 		const { html } = await render({
 			path: ctx.request.url,
 			content: {}
@@ -33,11 +35,11 @@ app.use(async (ctx, next) => {
 	}
 });
 
-app.use(mount("/dist", require("koa-static")(root)));
+app.use(mount("/", require("koa-static")(root)));
 
 if (!process.env.NOW_ZEIT_ENV) {
 	app.listen(3000);
 	console.log("http://localhost:3000");
 }
 
-module.exports = app.callback();
+module.exports = app;

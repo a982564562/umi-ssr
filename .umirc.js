@@ -11,9 +11,10 @@ export default defineConfig({
 	dva: {},
 	dynamicImport: false,
 	title: "my app",
-	hash: !isDev,
+	hash: false,
 	// publicPath: isDev ? "/" : "/dist/",
 	publicPath: "/",
+	outputPath: "/dist/",
 	routes: [
 		{
 			path: "/",
@@ -36,8 +37,10 @@ export default defineConfig({
 	],
 	manifest: {
 		fileName: "ssr-client-mainifest.json",
-		publicPath: "/dist/",
-		basePath: "/"
+		publicPath: "/dist/"
+	},
+	lessLoader: {
+		javascriptEnabled: true
 	},
 	chainWebpack(config, { webpack }) {
 		if (isDev) {
